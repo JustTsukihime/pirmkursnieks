@@ -1,2 +1,1 @@
-# sejiens.lv
-# pirmkursnieks
+# pirmkursnieks.datoriki.lv
