@@ -1,0 +1,2 @@
+# sejiens.lv
+# pirmkursnieks

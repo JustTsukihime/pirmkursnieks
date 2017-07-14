@@ -1,0 +1,165 @@
+/*#################
+#
+#   FONT STYLE
+#
+#################*/
+
+/* COOL COLOR YEEEEESSS JUST BEAUIIFUL -> rgb(196, 227, 235) */
+
+
+* {
+    font-family: "Times New Roman", Times, Monospace;
+    font-style: italic;
+}
+
+/*#################
+#
+#   FONT STYLE ENDS
+#
+#################*/
+
+html,body, body > .container-fluid {
+    width:100%;
+    min-height:100%;
+    height:100%;
+}
+html,body,.header hr ,.main,.footer,body > .container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
+body > .container-fluid {
+    position: relative;
+}
+
+.header{
+    background: linear-gradient(180deg,
+    rgb(196, 227, 235) calc(66% - 3px),
+    rgb(0,0,0) calc(66%),
+    rgb(196, 227, 235) calc(34% + 3px));
+}
+
+.header img {
+    padding: 5% 0;
+    display: block;
+    margin: auto;
+}
+.header hr {
+    width:calc(100% + 50px);
+    color:black;
+
+    margin-left:-25px;
+    border:1px solid black;
+}
+
+@media screen and (max-width: 320px) {
+    .logoMessage {
+        text-align:center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        background:rgb(196, 227, 235);
+    }
+    .header img {
+        width:50%;
+        padding-bottom:0;
+    }
+    .logoTitle {
+        text-align:center;
+    }
+    .logoMessage {
+        margin-top:-2%;
+        text-indent: 5%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main, .footer {
+        margin: 0 auto;
+    }
+    body,body > .container-fluid ,.header,.header h1,.header h3{
+        margin:0;
+        padding:0;
+        display:block;
+    }
+    .header {
+        position: relative;
+        width: 100%;
+    }
+    .header .col-md-10 {
+        height: 100%;
+        width: 75%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .header img {
+        width:100%;
+    }
+    .logoTitle {
+        height:70%;
+        position:relative;
+    }
+    .logoMessage {
+        height: 30%;
+        margin-left:-2%;
+    }
+    .logoTitle h1 {
+        position: absolute;
+        left:0;
+        bottom:10%;
+    }
+    .logoMessage h3 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .header hr {
+        display:none;
+    }
+}
+
+@media screen and (width: 768px) {
+    .logoMessage {
+        text-indent:0;
+    }
+    .header{
+        background: linear-gradient(180deg,
+        rgb(196, 227, 235) calc(67% - 3px),
+        rgb(0,0,0) calc(67%),
+        rgb(196, 227, 235) calc(37% + 3px));
+    }
+    .header hr {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header .col-md-10 {
+        width: 83%;
+    }
+    .logoMessage {
+        margin-left:-1%;
+    }
+}
+.footer {
+    background-color: rgb(196, 227, 235);
+    width:100%;
+}
+
+.footer ul li{
+    list-style: none;
+    display:inline-block;
+    padding: 1rem;
+}
+.footer .logo {
+    height:50px;
+}
+.footer .col-sm-6 {
+    text-align:center;
+}
+
+.main {
+    min-height:100%;
+}
