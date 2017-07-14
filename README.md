@@ -1,1 +1,1 @@
-# pirmkursnieks.datoriki.lv
+# pirmkursnieks
