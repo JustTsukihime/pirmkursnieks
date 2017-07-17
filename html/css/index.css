@@ -1,203 +1,343 @@
-/*#################
+/*##########################
+#
+#   BASICS
+#
+##########################*/
+html,body,header div,header img,header h1, header h2, header h3, header [class^="col"], header hr,
+body > .container-fluid, body >.container-fluid > .row
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html {
+    min-width:320px;
+}
+html,body{
+    width:100%;
+}
+header .right-header{
+    height:100%;
+}
+header h1 ,header h2, header h3 {
+    padding:10px;
+}
+/*##########################
 #
 #   FONT STYLE
 #
-#################*/
-
-/*
- COOL COLOR YEEEEESSS JUST BEAUIIFUL -> rgb(196, 227, 235)
- AND HIIIS MAGNIFICENT SIBBBLIIIING -> rgb(176, 204, 211)
-*/
-
-
-* {
-    font-family: "Times New Roman", Times, Monospace;
-    font-style: italic;
+##########################*/
+header,footer{
+    font-family: Helvetica, sans-serif;
+    font-style:italic;
 }
-
-/*#################
+/*##########################
 #
-#   FONT STYLE ENDS
+#   HEADER
 #
-#################*/
-
-html,body, body > .container-fluid {
-    width:100%;
-    min-height:100%;
-    height:100%;
-    min-width:300px;
-}
-
-html,body,.header hr ,.main,.footer,body > .container-fluid, *, .row, .footer h3{
-    margin: 0;
-    padding: 0;
-}
-
-body > .container-fluid {
-    position: relative;
-}
-
-.header{
+##########################*/
+header{
+    position:relative;
     background-image: linear-gradient(180deg,
-    rgb(176, 204, 211) calc(66% - 3px),
+    rgb(196, 227, 235) calc(66% - 3px),
     rgb(0,0,0) calc(66%),
-    rgb(196, 227, 235) calc(34% + 3px));
+    rgb(176, 204, 211) calc(34% + 3px));
 }
 
-.header img {
+header img {
+    width:50%;
     margin: 5% auto;
     display: block;
     border : 1px solid black;
     border-radius:100%;
     background-color:white;
 }
-.header hr {
+header hr {
     width:calc(100% + 50px);
-    color:black;
-
     margin-left:-25px;
     border:1px solid black;
 }
-
-.footer {
-    padding: 15px;
+@media screen and (min-width: 768px) {
+    header img {
+        width:100%;
+        margin: 5%;
+    }
+    header .right-header {
+        width: 70%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    header .logoTitle {
+        height:66%;
+        position:relative;
+    }
+    header .logoMessage {
+        height: 34%;
+        margin-left:-3%;
+    }
+    header .logoTitle h1 {
+        position: absolute;
+        left:0;
+        bottom:0;
+    }
+    header .logoMessage h3 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    header hr {
+        display:none;
+    }
+}
+@media screen and (max-width: 768px) {
+    header {
+        background:rgb(196, 227, 235);
+    }
+    header .logoTitle h1,header .logoMessage h3{
+        text-align: center;
+    }
+    header .logoMessage h3 {
+        background-color:rgb(176, 204, 211);
+        padding-bottom:20px;
+    }
+}
+@media screen and (width:768px) {
+    header {
+        background-image: linear-gradient(180deg,
+        rgb(196, 227, 235) calc(66% - 3px),
+        rgb(0,0,0) calc(66%),
+        rgb(176, 204, 211) calc(34% + 3px));
+    }
+}
+@media screen and (min-width: 992px) {
+    header .right-header {
+        width: 80%;
+    }
+    header .logoMessage {
+        margin-left:-2%;
+    }
+}
+/*##########################
+#
+#   FOOTER
+#
+##########################*/
+footer {
     background: linear-gradient(-45deg,
-    rgb(196, 227, 235) 50%,
-    rgb(176, 204, 211) 50%);
+        rgb(196, 227, 235) 50%,
+        rgb(176, 204, 211) 50%);
     width:100%;
     height: 20vh;
 }
-
-.footer .col-xs-6 {
+footer .col-xs-6 {
     height:100%;
     display:flex;
     align-items: center;
     justify-content: center;
 }
-
-.footer ul li{
-    list-style: none;
-    display:inline-block;
-    padding: 1rem;
+footer img {
+    height:62%;
 }
-
-.footer span {
+footer span {
     display:block;
 }
-.footer img {
-    height:100%;
-}
-
-
-@media screen and (max-width: 320px) {
-    .logoMessage {
-        text-align:center;
-    }
-}
 @media screen and (min-width: 520px) {
-    .footer span {
+    footer span {
         display:none;
     }
 }
-
-@media screen and (max-width: 768px) {
-    html {
-        width: calc(100% + 15px);
-    }
-    .header {
-        background:rgb(196, 227, 235);
-    }
-    .header img {
-        width:50%;
-        padding-bottom:0;
-    }
-    .logoTitle {
-        text-align:center;
-    }
-    .logoMessage {
-        margin-top:-2%;
-        text-indent: 5%;
-    }
-    .logoMessage h3{
-        text-align: center;
-    }
-    .footer h3 {
-        margin-left:-3%;
-    }
+/*##########################
+#
+#   CONTENT TIMELINE
+#
+##########################*/
+.custom_hidden {
+    display:none;
 }
 
-@media screen and (min-width: 768px) {
-    .main, .footer {
-        margin: 0 auto;
-    }
-    body,body > .container-fluid ,.header,.header h1,.header h3{
-        margin:0;
-        padding:0;
-        display:block;
-    }
-    .header {
-        position: relative;
-        width: 100%;
-    }
-    .header .col-md-10 {
-        height: 100%;
-        width: 75%;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .header img {
-        width:100%;
-    }
-    .logoTitle {
-        height:70%;
-        position:relative;
-    }
-    .logoMessage {
-        height: 30%;
-        margin-left:-2%;
-    }
-    .logoTitle h1 {
-        position: absolute;
-        left:0;
-        bottom:10%;
-    }
-    .logoMessage h3 {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .header hr {
-        display:none;
-    }
+main {
+    background: #25303B;
 }
-
-@media screen and (width: 768px) {
-    .header{
-        background: linear-gradient(180deg,
-        rgb(196, 227, 235) calc(67% - 3px),
-        rgb(0,0,0) calc(67%),
-        rgb(196, 227, 235) calc(37% + 3px));
-    }
-    .header hr {
-        display:none;
-    }
-    .logoMessage {
-        text-indent:0;
-    }
-    .logoMessage h3 {
-        padding-top:10px;
-    }
+section#timeline{
+    font-family: Helvetica, sans-serif;
 }
-
-@media screen and (min-width: 992px) {
-    .header .col-md-10 {
-        width: 83%;
-    }
-    .logoMessage {
-        margin-left:-1%;
-    }
+div.cursor{
+    cursor: pointer;
 }
-
-.main {
-    min-height:100%;
+div.cursor:hover{
+    color: blue;
+}
+section#timeline {
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+}
+section#timeline:before {
+    content: '';
+    display: block;
+    position: absolute;
+    /*left: 50%;*/
+    top: 0;
+    margin: 0 0 0 -1px;
+    width: 2px;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+}
+section#timeline article {
+    width: 100%;
+    margin: 0 0 20px 0;
+    position: relative;
+}
+section#timeline article:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+section#timeline article div.inner {
+    width: 90%;
+    float: right;
+    margin: 5px 0 0 0;
+    border-radius: 6px;
+}
+section#timeline article div.inner span.date {
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding: 5px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 0 0 -32px;
+    border-radius: 100%;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #25303B;
+    color: rgba(255,255,255,0.5);
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 0 7px #25303B;
+}
+section#timeline article div.inner span.date span {
+    display: block;
+    text-align: center;
+}
+section#timeline article div.inner span.date span.day {
+    font-size: 10px;
+}
+section#timeline article div.inner span.date span.month {
+    font-size: 18px;
+}
+section#timeline article div.inner span.date span.year {
+    font-size: 10px;
+}
+section#timeline article div.inner h2 {
+    padding: 15px;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+}
+section#timeline article div.inner h2:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(-45deg);
+}
+section#timeline article div.inner div.custom_hidden  {
+    font-size: 14px;
+    color: #656565;
+    display: none;
+}
+section#timeline article div.inner div.article  {
+    padding: 15px;
+    margin: 0;
+    background: #fff;
+    border-radius: 0 0 6px 6px;
+}
+section#timeline article:nth-child(n) div.inner {
+    float: right;
+}
+/*section#timeline article:nth-child(2n+2) div.inner h2:after {
+  left: -5px;
+}*/
+section#timeline article:nth-child(1) div.inner h2 {
+    background: #e74c3c;
+}
+section#timeline article:nth-child(1) div.inner h2:after {
+    background: #e74c3c;
+}
+section#timeline article:nth-child(2) div.inner h2 {
+    background: #2ecc71;
+}
+section#timeline article:nth-child(2) div.inner h2:after {
+    background: #2ecc71;
+}
+section#timeline article:nth-child(3) div.inner h2 {
+    background: #e67e22;
+}
+section#timeline article:nth-child(3) div.inner h2:after {
+    background: #e67e22;
+}
+section#timeline article:nth-child(4) div.inner h2 {
+    background: #1abc9c;
+}
+section#timeline article:nth-child(4) div.inner h2:after {
+    background: #1abc9c;
+}
+section#timeline article:nth-child(5) div.inner h2 {
+    background: #9b59b6;
+}
+section#timeline article:nth-child(5) div.inner h2:after {
+    background: #9b59b6;
+}
+section#timeline article:nth-child(6) div.inner h2 {
+    background: #e74c3c;
+}
+section#timeline article:nth-child(6) div.inner h2:after {
+    background: #e74c3c;
+}
+section#timeline article:nth-child(7) div.inner h2 {
+    background: #2ecc71;
+}
+section#timeline article:nth-child(7) div.inner h2:after {
+    background: #2ecc71;
+}
+section#timeline article:nth-child(8) div.inner h2 {
+    background: #e67e22;
+}
+section#timeline article:nth-child(8) div.inner h2:after {
+    background: #e67e22;
+}
+section#timeline article:nth-child(9) div.inner h2 {
+    background: #1abc9c;
+}
+section#timeline article:nth-child(9) div.inner h2:after {
+    background: #1abc9c;
+}
+section#timeline article:nth-child(10) div.inner h2 {
+    background: #9b59b6;
+}
+section#timeline article:nth-child(10) div.inner h2:after {
+    background: #9b59b6;
+}
+.calculator {
+    text-align: center;
+}
+input {
+    padding: 2px 5px;
+    color: #666;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+#error {
+    color:rgb(237,67,55);
 }
